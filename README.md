@@ -1,4 +1,4 @@
-# Hollywood-Game
+# HOLLYWOOD
 
 ## About the Program
 
