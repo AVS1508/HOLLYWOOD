@@ -112,7 +112,6 @@ void FillOrSlash(char Input, char A[20], char Dummy[20])
             cout << "Guess a non-vowel character:";
             cin >> Input;
             Input = toupper(Input);
-
         } while (Input == 'A' || Input == 'E' || Input == 'I' || Input == 'O' || Input == 'U');
         int Found = 0;
         for (int K = 0; K < 20 && A[K] != '\0'; K++) //LOOP FOR LINEARLY SEARCHING THE CHARACTER GUESS
