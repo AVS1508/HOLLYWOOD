@@ -2,7 +2,8 @@
 # Version          : 1.0
 # Developed By     : Aditya Vikram Singh
 
-import math, random
+import math
+import random
 
 
 class Hollywood:
@@ -40,9 +41,9 @@ class Hollywood:
 
     def CreateDummyMovieAndEncode(movie):
         movieCopy = list(movie)
-        for i in range(len(movieCopy)):
-            if movieCopy[i] not in ["A", "E", "I", "O", "U", " "]:
-                movieCopy[i] = "*"
+        for i, item in enumerate(movieCopy):
+            if item not in ["A", "E", "I", "O", "U", " "]:
+                item = "*"
         return "".join(movieCopy)
 
     def FillOrSlash(movie, current):
@@ -55,8 +56,8 @@ class Hollywood:
                 if inp not in ["A", "E", "I", "O", "U", " "]:
                     break
             found = False
-            for i in range(len(movie)):
-                if inp == movie[i]:
+            for i, item in enumerate(movie):
+                if inp == item:
                     currentCopy[i] = inp
                     found = True
             if movie == "".join(currentCopy):
