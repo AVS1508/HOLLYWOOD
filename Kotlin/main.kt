@@ -1,3 +1,8 @@
+/*
+    Project Title    : Hollywood - A Movie Guessing Game
+    Version          : 1.0
+    Developed By     : Aditya Vikram Singh
+*/
 
 class Hollywood {
     private var moviesList: Array<String> = arrayOf<String>("INTERSTELLAR", "ARMAGEDDON", "INCEPTION",
@@ -11,7 +16,7 @@ class Hollywood {
 
     fun CreateDummyMovieAndEncode(movie: String): String {
         var movieCopy: CharArray = movie.toCharArray()
-        for (i in 0..movieCopy.size-1) {
+        for (i in 0..movieCopy.size - 1) {
             if (!(movieCopy[i] == 'A' || movieCopy[i] == 'E' || movieCopy[i] == 'I' || movieCopy[i] == 'O' ||
             movieCopy[i] == 'U' || movieCopy[i] == ' ')) {
                 movieCopy[i] = '*'
@@ -30,7 +35,7 @@ class Hollywood {
                 input = readLine()!!.toCharArray().get(0)
             } while (input == 'A' || input == 'E' || input == 'I' || input == 'O' || input == 'U' || input == ' ')
             var found: Boolean = false
-            for (i in 0..movie.length-1) {
+            for (i in 0..movie.length - 1) {
                 if (input == movie.get(i)) {
                     currentCopy[i] = input
                     found = true

@@ -1,3 +1,9 @@
+/*
+  Project Title    : Hollywood - A Movie Guessing Game
+  Version          : 1.0
+  Developed By     : Aditya Vikram Singh
+*/
+
 package main
 
 import (
