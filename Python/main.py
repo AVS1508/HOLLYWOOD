@@ -35,7 +35,7 @@ class Hollywood:
     ]
 
     def SelectRandomMovie():
-        return Hollywood.moviesList[random.randint(0, len(Hollywood.moviesList)-1]
+        return Hollywood.moviesList[random.randint(0, len(Hollywood.moviesList)-1)]
 
     def CreateDummyMovieAndEncode(movie):
         movieCopy = list(movie)
@@ -78,7 +78,7 @@ class Hollywood:
 
 
 def main():
-    print("Hello! Let's play a game of HOLLYWOOD - a movie guessing game! ")
+    print("Hello! Let's play a game of HOLLYWOOD - a movie guessing game!\n")
     toggle = "Y"
     while toggle != "N":
         movie = Hollywood.SelectRandomMovie()
