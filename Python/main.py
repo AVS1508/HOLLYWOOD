@@ -1,13 +1,11 @@
 # Project Title    : Hollywood - A Movie Guessing Game
-# Version          : 1.0
+# Version          : 1.1
 # Developed By     : Aditya Vikram Singh
+# Contributors     : Sagnik Pal
 
-import math
 import random
 
-
 class Hollywood:
-
     moviesList = [
         "INTERSTELLAR",
         "ARMAGEDDON",
@@ -37,13 +35,13 @@ class Hollywood:
     ]
 
     def SelectRandomMovie():
-        return Hollywood.moviesList[math.floor(random.randint(0, 24))]
+        return Hollywood.moviesList[random.randint(0, len(Hollywood.moviesList)-1)]
 
     def CreateDummyMovieAndEncode(movie):
         movieCopy = list(movie)
         for i, item in enumerate(movieCopy):
             if item not in ["A", "E", "I", "O", "U", " "]:
-                item = "*"
+                movieCopy[i] = "*"
         return "".join(movieCopy)
 
     def FillOrSlash(movie, current):
@@ -52,7 +50,7 @@ class Hollywood:
         while chances > 0:
             while True:
                 print("Guess a non-vowel alphabet: ")
-                inp = input()
+                inp = input().upper()
                 if inp not in ["A", "E", "I", "O", "U", " "]:
                     break
             found = False
@@ -62,23 +60,25 @@ class Hollywood:
                     found = True
             if movie == "".join(currentCopy):
                 chances = 0
+                print()
                 print(movie)
                 print("Congratulations! You guessed the movie.")
             elif found:
-                print("Good guess!")
+                print("Good guess!\n")
                 print("".join(currentCopy))
             else:
                 chances = chances - 1
                 print("Character not present!")
+                print("Chances remaining: ", chances, '\n')
                 print("".join(currentCopy))
-                print("Chances remaining: ", chances)
+                                                   
         if movie != "".join(currentCopy):
             print("Chances are over, sorry! Better luck next time!")
             print("The movie was: ", movie)
 
 
 def main():
-    print("Hello! Let's play a game of HOLLYWOOD - a movie guessing game! ")
+    print("Hello! Let's play a game of HOLLYWOOD - a movie guessing game!\n")
     toggle = "Y"
     while toggle != "N":
         movie = Hollywood.SelectRandomMovie()
@@ -86,8 +86,8 @@ def main():
         print(dummy)
         Hollywood.FillOrSlash(movie, dummy)
         print("Do you want to play another game (Y/N)?")
-        toggle = input()
-
+        toggle = input().upper()
+        print()
 
 if __name__ == "__main__":
     main()
